@@ -1,0 +1,7 @@
+openai>=1.50.0
+openai-agents>=0.0.14
+pydantic>=2.9.0
+python-dotenv>=1.0.1
+sendgrid>=6.11.0
+pytest>=8.3.0
+ruff>=0.6.0
