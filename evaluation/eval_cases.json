@@ -1,0 +1,51 @@
+[
+  {
+    "case_id": "approved_enterprise_fintech",
+    "campaign_id": "camp-2026-q4-001",
+    "prospect": {
+      "prospect_name": "Aarav Mehta",
+      "prospect_email": "aarav.mehta@finvault.example.com",
+      "company": "FinVault",
+      "role": "VP of Risk Engineering",
+      "verified_facts": [
+        "SOC 2 Type II certified in 2025",
+        "42% YoY growth in automated KYC checks"
+      ],
+      "value_proposition": "Reduce manual compliance review latency by 35% with deterministic audit trails."
+    },
+    "expected_status": "sent",
+    "expected_allowlist_pass": true
+  },
+  {
+    "case_id": "unapproved_recipient_blocked",
+    "campaign_id": "camp-2026-q4-002",
+    "prospect": {
+      "prospect_name": "Jordan Lee",
+      "prospect_email": "jordan.lee@unverified-domain.test",
+      "company": "Unverified Corp",
+      "role": "Head of Operations",
+      "verified_facts": [
+        "Expanded regional payment rails"
+      ],
+      "value_proposition": "Automate reconciliation workflows with zero-trust guardrails."
+    },
+    "expected_status": "blocked_unapproved_recipient",
+    "expected_allowlist_pass": false
+  },
+  {
+    "case_id": "duplicate_campaign_id_deduped",
+    "campaign_id": "camp-2026-q4-001",
+    "prospect": {
+      "prospect_name": "Aarav Mehta",
+      "prospect_email": "aarav.mehta@finvault.example.com",
+      "company": "FinVault",
+      "role": "VP of Risk Engineering",
+      "verified_facts": [
+        "SOC 2 Type II certified in 2025"
+      ],
+      "value_proposition": "Reduce manual compliance review latency by 35% with deterministic audit trails."
+    },
+    "expected_status": "duplicate_skipped",
+    "expected_allowlist_pass": true
+  }
+]
