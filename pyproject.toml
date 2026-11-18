@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guarded-sdr-outreach-agents"
+version = "0.1.0"
+description = "Multi-writer SDR outreach agent pipeline with rubric selection, allowlists, idempotency, and delivery trace verification."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Pranil Deshmukh" }]
+dependencies = [
+    "openai>=1.50.0",
+    "openai-agents>=0.0.14",
+    "pydantic>=2.9.0",
+    "python-dotenv>=1.0.1",
+    "sendgrid>=6.11.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "ruff>=0.6.0",
+]
+
+[project.scripts]
+sdr-outreach = "sdr_agents.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sdr_agents*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
